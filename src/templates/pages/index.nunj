@@ -1,0 +1,156 @@
+{% extends "../ext/base.nunj" %}
+
+{% from "../../components/menu/menu.nunj" import menu %}
+{% from "../../components/steps/steps.nunj" import steps %}
+{% from "../../components/button/button.nunj" import button %}
+{% from "../../components/icon/icon.nunj" import icon %}
+
+
+{% block content %}
+
+	<div class="overlay"></div>
+	
+	<div class="wrapper__header">
+		{% include '../../components/header/header.nunj' %}
+	</div>
+
+	<div class="wrapper__content">
+		<div class="steps__wrapper">
+			{{steps()}}
+		</div>
+		<div class="payment__wrapper">
+			<div class="payment__area">
+				<div class="title">Billing Information</div>
+				<div class="payment__form">
+					<form action="#">
+						<div class="payment__radio-list radio-list">
+							<label class="radio">
+								<input type="radio" name="payment-list" checked>
+								<span></span>
+								<div>
+									<div class="radio__text">
+										<p>Pay with Credit Card</p>
+									</div>
+								</div>
+							</label>
+							<label class="radio">
+								<input type="radio" name="payment-list">
+								<span></span>
+								<div>
+									<div class="radio__image">
+										<img src={% inline 'paypal.svg' %} width="85" height="23"/>
+									</div>
+								</div>
+							</label>
+						</div>
+						<div class="payment__form-block">
+							<div class="payment__form-card">
+								<div class="card">
+									<div class="card__grid">
+										<div class="card__grid-item fill">
+											<label class="card__label custom-label">Name on card</label>
+											<div class="card__input-wrapper">
+												<div class="custom-input">
+													<input type="text" class="error" placeholder="Placeholder Text">
+													<span class="custom-input__message">error message</span>
+												</div>
+											</div>
+										</div>
+										<div class="card__grid-item fill grid-list">
+											<label class="card__label custom-label">Card number</label>
+											<div class="card__input-wrapper">
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+											</div>
+										</div>
+										<div class="card__grid-item">
+											<label class="card__label custom-label">Expire date</label>
+											<div class="card__input-wrapper">
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+											</div>
+										</div>
+										<div class="card__grid-item">
+											<label class="card__label custom-label">
+												CVV code
+												<div class="custom-label__question">
+													<span>?</span>
+												</div>
+											</label>
+											<div class="card__input-wrapper">
+												<div class="custom-input">
+													<input type="text">
+													<span class="custom-input__message"></span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="payment__form-agreement">
+							<label class="checkbox">
+								<input type="checkbox" checked>
+								<span></span>
+								<div>
+									<div class="checkbox__text">
+										<p>Save information of this credit card</p>
+									</div>
+								</div>
+							</label>
+							<label class="checkbox">
+								<input type="checkbox" class="error">
+								<span></span>
+								<div>
+									<div class="checkbox__text">
+										<p>I accept the
+											<a href="#">terms and comditions</a>
+											and the
+											<a href="#">Privacy Policies</a>
+										</p>
+									</div>
+								</div>
+							</label>
+						</div>
+						<div class="payment__form-buttons">
+							{{button({
+								type: 'button',
+								className: 'button-o',
+								children: 'Back',
+								disabled: false
+							})}}
+							{{button({
+								type: 'submit',
+								className: '',
+								children: 'Check Out',
+								disabled: true
+							})}}
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper__basket">
+		{% include '../../components/basket/basket.nunj' %}
+	</div>
+
+
+{% endblock content %}

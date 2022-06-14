@@ -1,0 +1,35 @@
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid $primary;
+	height: 40px;
+	cursor: pointer;
+	font-size: 14px;
+	line-height: 24px;
+	padding: 8px 29px;
+	color: $white;
+	background-color: $primary;
+	border-radius: 3px;
+	transition: $cubic;
+	&:hover {
+		opacity: 0.8;
+		transition: none;
+	}
+	&:active {
+		opacity: 0.8;
+	}
+	&.button-o {
+		background-color: $white;
+		color: $black;
+		border-color: $gray;
+	}
+	&[disabled="disabled"],
+	&:disabled {
+		pointer-events: none;
+		user-select: none;
+		background-color: $disabled;
+		border-color: $disabled;
+		color: $gray-dark;
+	}
+}

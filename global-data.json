@@ -1,0 +1,85 @@
+{
+	"menuItems": [
+		{
+			"name": "Women’s",
+			"active": true,
+			"path": "#"
+		},
+		{
+			"name": "Men’s",
+			"path": "#"
+		},
+		{
+			"name": "Home",
+			"path": "#"
+		},
+		{
+			"name": "Travel",
+			"path": "#"
+		},
+		{
+			"name": "Beauty",
+			"path": "#"
+		},
+		{
+			"name": "Sale",
+			"path": "#"
+		}
+	],
+	"stepsItems": [
+		{
+			"id": "1",
+			"status": "Filled",
+			"title": "Account"
+		},
+		{
+			"id": "2",
+			"status": "Filled",
+			"title": "Shipping"
+		},
+		{
+			"id": "3",
+			"status": "Actived",
+			"title": "Billing"
+		},
+		{
+			"id": "4",
+			"status": "Disabled",
+			"title": "Review"
+		}
+	],
+	"products": [
+		{
+			"id": 1,
+			"desc": "Amet minim mollit non deserunt ullamco est sit",
+			"count": 1,
+			"image": "product-photo-img1.png",
+			"cost": 525
+		},
+		{
+			"id": 2,
+			"desc": "Amet minim mollit non",
+			"count": 5,
+			"image": "product-photo-img2.png",
+			"cost": 1525
+		}
+	],
+	"price": [
+		{
+			"name": "subtotal",
+			"cost": 0
+		},
+		{
+			"name": "tax",
+			"cost": 100
+		},
+		{
+			"name": "shipping",
+			"cost": 150
+		},
+		{
+			"name": "total",
+			"cost": 0
+		}
+	]
+}

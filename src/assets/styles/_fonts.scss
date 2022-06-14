@@ -1,0 +1,6 @@
+/* Use Google Fonts */
+/* @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,cyrillic) */
+/* or */
+@include font-face('Roboto', '../fonts/Roboto-Regular', 400);
+@include font-face('Roboto', '../fonts/Roboto-Medium', 500);
+@include font-face('Roboto', '../fonts/Roboto-Bold', 700);

@@ -1,0 +1,42 @@
+.basket {
+	width: 100%;
+	.title {
+		margin-bottom: 30px;
+	}
+	&__promo {
+		&-code {
+			display: flex;
+			width: 100%;
+			.card__input-wrapper {
+				flex: 1 1 0;
+				margin-right: 10px;
+			}
+		}
+	}
+	&__price {
+		ul {
+			padding-right: 15px;
+			li {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				font-size: 14px;
+				line-height: 34px;
+				&:last-child {
+					font-size: 18px;
+					line-height: 29px;
+					font-weight: 700;
+				}
+				& > p {
+					text-transform: capitalize;
+				}
+			}
+		}
+	}
+	&__empty {
+		padding: 40px;
+	}
+	.hidden {
+		display: none;
+	}
+}

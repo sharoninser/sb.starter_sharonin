@@ -1,0 +1,81 @@
+<div class="basket">
+	<div class="basket__products area">
+		<div class="title">My basket</div>
+		<div class="product-list">
+			{% for product in products %}
+				<div class="product" data-id="{{product.id}}">
+					<div class="product__img">
+						<img src={% inline product.image %} width="100" height="100"/>
+					</div>
+					<div class="product__desc">
+						<p>{{product.desc}}</p>
+						<div class="product__counter">
+							<div class="counter">
+								<button type="button" class="counter__button counter__button_dec">
+									{{ icon({
+									iconName: 'dec-icon',
+									className: 'icon',
+									attributes: 'viewBox="0 0 21 20"'
+								}) }}
+								</button>
+								<input type="text" class="counter__input" value="{{product.count}}" data-price="{{product.cost}}" readonly>
+								<button type="button" class="counter__button counter__button_inc">
+									{{ icon({
+									iconName: 'inc-icon',
+									className: 'icon',
+									attributes: 'viewBox="0 0 21 20"'
+								}) }}
+								</button>
+							</div>
+							<div class="product__cost">
+								$
+								<span>{{product.cost}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="product__delete">
+						<button class="product__delete-btn">
+							{{ icon({
+							iconName: 'cross',
+							className: 'icon',
+							attributes: 'viewBox="0 0 19 18"'
+						}) }}
+						</button>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<div class="basket__promo area">
+		<div class="title">Promo code</div>
+		<div class="basket__promo-code">
+			<div class="card__input-wrapper">
+				<div class="custom-input">
+					<input type="text" placeholder="Placeholder Text">
+					<span class="custom-input__message"></span>
+				</div>
+			</div>
+			{{button({
+				type: 'button',
+				className: '',
+				children: 'Apply',
+				disabled: false
+			})}}
+		</div>
+	</div>
+	<div class="basket__price area">
+		<ul>
+			{% for priceItem in price %}
+				<li>
+					<p>{{ priceItem.name }}</p>
+					<span>
+						$<span class="price price_{{priceItem.name}}">{{priceItem.cost}}</span>
+					</span>
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="basket__empty area hidden">
+		<div class="title">В корзине пока ничего нет</div>
+	</div>
+</div>

@@ -1,0 +1,21 @@
+// ======= GLOBAL =======
+@import 'constants';
+@import 'lib/base';
+@import 'fonts';
+@import 'reset';
+@import 'global';
+@import 'layout';
+
+// ======= UIKIT =======
+@import 'ui/typography';
+@import 'ui/inputs';
+
+// ======= COMPONENTS =======
+@import '../../components/header/header';
+@import '../../components/menu/menu';
+@import '../../components/steps/steps';
+@import '../../components/basket/basket';
+@import '../../components/button/button';
+
+// ======= PAGES =======
+@import 'pages/main';

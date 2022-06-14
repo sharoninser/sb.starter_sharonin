@@ -1,0 +1,36 @@
+{% from "../../components/icon/icon.nunj" import icon %}
+
+<div class="header">
+	<div class="container-fluid">
+		<div class="header__wrapper">
+			<div class="header__elem header__elem_logo">
+				<a href="/" class="header__logo">
+					<img src={% inline 'logo.svg' %} width="89" height="32" alt="SP shop"/>
+				</a>
+			</div>
+			<div class="header__elem header__elem_menu">
+				{{ menu() }}
+			</div>
+			<div class="header__elem header__elem_controls">
+				<a href="javascript:;" class="header__search">
+					{{ icon({
+						iconName: 'search',
+						className: 'icon',
+						attributes: 'viewBox="0 0 24 24"'
+					}) }}
+				</a>
+				<a href="javascript:;" id="js-basket" class="header__basket">
+					{{ icon({
+						iconName: 'basket',
+						className: 'icon',
+						attributes: 'viewBox="0 0 24 21"'
+					}) }}
+					<span class="header__basket-counter" id="basket-counter">0</span>
+				</a>
+				<a href="javascript:;" id="js-gumb" class="header__gumb">
+					<span class="header__gumb-line"></span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

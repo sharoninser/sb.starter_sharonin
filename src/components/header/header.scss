@@ -1,0 +1,129 @@
+.header {
+	border-bottom: 1px solid $gray;
+	&__wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 24px 0;
+	}
+	&__logo {
+		display: block;
+	}
+	&__elem {
+		&_controls {
+			display: flex;
+			align-items: flex-end;
+			& > a + a {
+				margin-left: 26px;
+			}
+		}
+	}
+	&__search {
+		width: 24px;
+		height: 24px;
+		transition: $default;
+	}
+	&__basket {
+		position: relative;
+		margin-right: 6px;
+		width: 24px;
+		height: 21px;
+		transition: $default;
+		&-counter {
+			position: absolute;
+			content: '';
+			top: -6px;
+			right: -6px;
+			display: flex;
+			justify-content: center;
+			align-items: flex-end;
+			padding-left: 2px;
+			padding-right: 2px;
+			height: 13px;
+			min-width: 13px;
+			border-radius: 13px;
+			font-size: 10px;
+			line-height: 12px;
+			color: $white;
+			background-color: $primary;
+		}
+	}
+	&__gumb {
+		display: none;
+		position: relative;
+		height: 22px;
+		width: 29px;
+		&-line,
+		&-line::after,
+		&-line::before {
+			position: absolute;
+			top: calc(50% - 1px);
+			height: 2px;
+			width: 29px;
+			background-color: $black;
+			transition: $cubic;
+		}
+		&-line {
+			&::after,
+			&::before {
+				content: '';
+			}
+			&::before {
+				transform: translateY(-10px);
+			}
+			&::after {
+				transform: translateY(10px);
+			}
+		}
+	}
+}
+
+@include max-screen(992px) {
+	.header {
+		&__elem {
+			&_logo,
+			&_controls {
+				position: static;
+				z-index: 82;
+			}
+			&_menu {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: fixed;
+				top: 0;
+				left: 0;
+				background-color: $white;
+				width: 100%;
+				height: 0;
+				z-index: 81;
+				overflow: hidden;
+				transition: $default;
+			}
+		}
+		&__gumb {
+			display: block;
+		}
+		&.is-open {
+			.header__elem_menu {
+				height: 100%;
+			}
+			.header__search,
+			.header__basket {
+				opacity: 0;
+				pointer-events: none;
+			}
+			.header__gumb {
+				.header__gumb-line {
+					background-color: transparent;
+				}
+				.header__gumb-line::before {
+					transform: rotate(45deg);
+				}
+				.header__gumb-line::after {
+					transform: rotate(-45deg);
+				}
+			}
+		}
+	}
+}

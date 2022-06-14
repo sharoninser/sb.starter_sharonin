@@ -1,0 +1,25 @@
+.menu {
+	display: flex;
+	align-items: center;
+	&__item {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	&__item + &__item {
+		margin-left: 32px;
+	}
+}
+
+@include max-screen(992px) {
+	.menu {
+		flex-direction: column;
+		&__item {
+			font-size: 18px;
+			line-height: 20px;
+		}
+		&__item + &__item {
+			margin-left: 0;
+			margin-top: 20px;
+		}
+	}
+}

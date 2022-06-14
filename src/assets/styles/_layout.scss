@@ -1,0 +1,66 @@
+.wrapper {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+	&__header {
+		position: static;
+		z-index: 81;
+		width: 100%;
+	}
+	&__content,
+	&__basket {
+		min-height: calc(100vh - $header-height);
+	}
+	&__content {
+		flex: 1 1 0;
+		padding-top: 60px;
+		padding-bottom: 60px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	&__basket {
+		width: 410px;
+		min-width: 410px;
+		border-left: 1px solid $gray;
+		background-color: $white;
+		transition: $default;
+	}
+}
+
+.container-fluid {
+	width: 100%;
+	padding: 0 30px;
+	margin: auto;
+}
+
+@include max-screen(992px) {
+	.wrapper {
+		&__basket {
+			position: fixed;
+			top: $header-height;
+			height: calc(100vh - $header-height);
+			right: -411px;
+			z-index: 80;
+			overflow-y: auto;
+			&::-webkit-scrollbar {
+				width: 4px;
+			}
+			&::-webkit-scrollbar-button {
+				width: 0;
+				height: 0;
+			}
+			&::-webkit-scrollbar-thumb {
+				border-radius: 4px;
+				background-color: rgba($primary, 0.8);
+			}
+			&::-webkit-scrollbar-track {
+				background-color: transparent;
+				border-radius: 4px;
+			}
+			&.is-show {
+				right: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{% macro steps() %}
+	<ul class="steps">
+		{% for step in stepsItems %}
+			<li class="steps__item {% if step.status == "Filled" %}_is-filled{% elif step.status == "Actived" %}_is-actived{% else %}_is-disabled{% endif %}">
+				<span class="steps__item-num">{{step.id}}</span>
+				<span class="steps__item-title">{{step.title}}</span>
+			</li>
+		{% endfor %}
+	</ul>
+{% endmacro %}

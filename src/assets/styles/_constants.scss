@@ -1,0 +1,30 @@
+// fonts
+$font: 'Roboto', sans-serif;
+
+// colors
+$primary: #3366ff;
+$secondary-light: #ededf1;
+$secondary-dark: #555770;
+$secondary-medium: #8e90a6;
+
+$black: #000000;
+$white: #ffffff;
+$gray: #cfcfcf;
+$gray-dark: #8c8c8c;
+
+$bg-icon: #DBDBDB;
+$border-area: #CFCFCF;
+$disabled: #d5d5d5;
+
+// shadows
+$shadow: 0px 0px 32px rgba(0, 0, 0, 0.19);
+
+// transitions
+$default-transition-duration: 0.4s;
+$default-transition-function: ease-out;
+$cubic: all .3s cubic-bezier(.1,.1,.25,.9);
+$default: all .3s;
+
+$error: #f85c5c;
+
+$header-height: 81px;

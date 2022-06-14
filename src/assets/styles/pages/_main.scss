@@ -1,0 +1,170 @@
+.steps__wrapper {
+	padding-left: 50px;
+	padding-right: 50px;
+	margin-bottom: 60px;
+}
+
+.payment {
+	&__area {
+		width: 100%;
+		max-width: 690px;
+		margin: auto;
+		padding: 0 30px;
+		.title {
+			margin-bottom: 40px;
+		}
+	}
+	&__radio {
+		&-list {
+			display: flex;
+			align-items: center;
+			margin-bottom: 40px;
+			.radio + .radio {
+				margin-left: 13%;
+			}
+		}
+	}
+	&__form {
+		&-block {
+			margin-bottom: 40px;
+		}
+		&-agreement {
+			margin-bottom: 40px;
+			.checkbox + .checkbox {
+				margin-top: 12px;
+			}
+		}
+		&-buttons {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			width: 100%;
+		}
+	}
+}
+
+.card {
+	border-radius: 5px;
+	background-color: $white;
+	box-shadow: $shadow;
+	border: 1px solid $border-area;
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-bottom: 44px;
+	margin-left: -30px;
+	width: 100%;
+	max-width: 550px;
+	&__grid {
+		@include grid-template;
+		grid-row-gap: 20px;
+		&-item {
+			&.fill {
+				grid-column: 1/5;
+				&.grid-list {
+					.card__input-wrapper {
+						@include grid-template;
+					}
+				}
+			}
+		}
+	}
+	&__input {
+		width: 100%;
+		&-wrapper {
+			display: flex;
+			justify-content: space-between;
+			.custom-input {
+				flex: 1 1 0;
+			}
+		}
+	}
+}
+
+.checkbox {
+	@include check-radio(0, $gray-dark);
+}
+.radio {
+	@include check-radio(50%, $black);
+}
+
+.area {
+	padding: 40px;
+	& + .area:not(:last-of-type) {
+		border-top: 1px solid $gray;
+	}
+}
+
+.product {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	& + .product {
+		margin-top: 40px;
+	}
+	&__img {
+		min-width: 100px;
+		width: 100px;
+		height: 100px;
+		margin-right: 12px;
+		img {
+			object-fit: contain;
+			object-position: center center;
+		}
+	}
+	&__desc {
+		flex: 1 1 0;
+		margin-right: 5px;
+		& > p {
+			font-size: 14px;
+			line-height: 16px;
+			color: $black;
+			margin-bottom: 15px;
+			min-height: 32px;
+		}
+	}
+	&__delete {
+		min-width: 18px;
+		width: 18px;
+		&-btn {
+			outline: none;
+			border: none;
+			background-color: transparent;
+			cursor: pointer;
+		}
+	}
+	&__counter {
+		display: flex;
+		align-items: center;
+	}
+	&__cost {
+		margin-left: 25px;
+	}
+}
+
+.counter {
+	display: flex;
+	&__button {
+		@extend .reset-button;
+		width: 20px;
+		height: 20px;
+		min-width: 20px;
+	}
+	&__input {
+		@extend .input-reset;
+		font-family: $font;
+		font-size: 14px;
+		line-height: 20px;
+		padding: 0 2px;
+		text-align: center;
+		color: $black;
+		width: 43px;
+		cursor: default;
+	}
+}
+
+@include max-screen(992px) {
+	.payment__area {
+		padding: 0 41px;
+	}
+}
